@@ -91,7 +91,7 @@ export default function MusicPage() {
                   <Image src={album.coverImage} alt={album.title} fill className="object-cover" />
                 </div>
                 <div className="p-3 text-center">
-                  <h3 className="text-white font-bold">{album.title}</h3>
+                  <h3 className="text-orange-500 font-bold">{album.title}</h3>
                   <p className="text-white/70 text-sm">{album.tracks.length} tracks</p>
                 </div>
               </motion.div>

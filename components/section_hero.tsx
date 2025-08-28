@@ -55,38 +55,38 @@ export default function SectionHero({subtitle}: Props) {
         </motion.div>
 
         {/* RIGHT — Featured Track / Player */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="flex flex-col items-center md:items-end"
-        >
-          {/* Album Art with hover animation */}
-          <motion.div
-            whileHover={{
-              scale: 1.05,
-              rotate: 1,
-              boxShadow: "0px 0px 30px rgba(168, 85, 247, 0.6)", // Purple glow
-            }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-            className="relative w-72 h-72 rounded-2xl overflow-hidden shadow-2xl shadow-purple-600/40 border border-white/10 cursor-pointer"
-          >
-            <Image
-              src="/assets/images/bizzy01.jpg"
-              alt="Featured Album"
-              fill
-              className="object-cover"
-            />
-            {/* Glow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-          </motion.div>
+               <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.9, delay: 0.2 }}
+                  className="flex flex-col items-center md:items-end"
+                >
+                  {/* Album Art with hover animation */}
+                  <motion.div
+                    whileHover={{
+                      scale: 1.05,
+                      rotate: 1,
+                      boxShadow: "0px 0px 30px rgba(250, 149, 34, 0.6)", // Green glow
+                    }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                    className="relative w-72 h-72 rounded-2xl overflow-hidden shadow-2xl shadow-yellow-600/40 border border-white/10 cursor-pointer"
+                  >
+                    <Image
+                      src="/assets/images/bizzy01.jpg"
+                      alt="Featured Album"
+                      fill
+                      className="object-cover"
+                    />
+                    {/* Glow overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  </motion.div>
         
-          {/* Mini tagline below cover */}
-          <p className="mt-4 text-sm text-white/70 italic">
-            🎶 Latest Album: <span className="font-semibold">The Boss Is Back</span> 🎶
-          </p>
-        </motion.div>
+                  {/* Mini tagline below cover */}
+                  <p className="mt-4 text-sm text-white/70 italic">
+                    🎶 Latest Album: <span className="font-semibold">The Boss Is Back</span> 🎶
+                  </p>
+          </motion.div>
       </div>
     </section>
   );

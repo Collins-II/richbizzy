@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import SectionHero from "@/components/section_hero";
 import VideoCard from "@/components/videocard";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface Video {
   id: string;
@@ -117,7 +118,7 @@ export default function VideosPage() {
                 allowFullScreen
               />
               <div className="p-4">
-                <h3 className="text-white font-bold text-lg">{video.title}</h3>
+                <h3 className="text-orange-500 font-bold text-lg">{video.title}</h3>
                 <p className="text-white/70 text-sm">{video.category}</p>
               </div>
             </motion.div>
@@ -126,26 +127,28 @@ export default function VideosPage() {
 
         {/* Slider Controls */}
         <button
-          onClick={scrollLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-red-500"
-        >
-          ◀
-        </button>
-        <button
-          onClick={scrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 p-3 rounded-full text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-red-500"
-        >
-          ▶
-        </button>
-      </div>
+            aria-label="nav-buttons"
+            onClick={scrollLeft}
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/40 hover:bg-black/70 p-2 transition"
+          >
+            <ChevronLeft className="w-6 h-6 text-white" />
+          </button>
+          <button
+            aria-label="nav-buttons"
+            onClick={scrollRight}
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/40 hover:bg-black/70 p-2 transition"
+          >
+            <ChevronRight className="w-6 h-6 text-white" />
+          </button>
+        </div>
 
       {/* Categories Filter */}
       <div className="flex flex-wrap justify-center gap-4 my-10">
         <Button
           className={`rounded-full ${
             !selectedCategory
-              ? "bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 text-white"
-              : "bg-white/10 text-white"
+              ? "bg-orange-500 hover:bg-orange-400 text-white"
+              : "bg-white/10 hover:bg-orange-400 text-white"
           }`}
           onClick={() => setSelectedCategory(null)}
         >
@@ -156,8 +159,8 @@ export default function VideosPage() {
             key={category}
             className={`rounded-full ${
               selectedCategory === category
-                ? "bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 text-white"
-                : "bg-white/10 text-white"
+                ? "bg-orange-500 hover:bg-orange-400 text-white"
+                : "bg-white/10 hover:bg-orange-400 text-white"
             }`}
             onClick={() => setSelectedCategory(category)}
           >
